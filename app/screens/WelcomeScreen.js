@@ -1,9 +1,9 @@
 import React from 'react';
 import { ImageBackground, StyleSheet, View, Image, Text } from 'react-native';
-import AppButton from '../components/Button/AppButton';
+import AppButton from '../components/AppButton';
 import colors from '../config/colors';
 
-function WelcomeScreen(props) {
+function WelcomeScreen({ navigation }) {
     return (
         <ImageBackground 
         blurRadius={5}
@@ -14,12 +14,12 @@ function WelcomeScreen(props) {
         <Image 
         style={styles.logo}
         source={require('../assets/logo.png')} />
-        <Text style={styles.tagline}>GET YOUR LIFE TOGETHER</Text>
+        <Text style={styles.tagline}>HAZELNUT</Text>
         </View>
 
         <View style={styles.buttonsContainer}>
-        <AppButton title="Login" color="third" />
-        <AppButton title="Register" color="third"/>
+        <AppButton title="Login" color="gold" onPress={()=> navigation.navigate("Login")} />
+        <AppButton title="Register" color="gold" onPress={()=> navigation.navigate("Register")} />
         
 
         </View>
@@ -33,15 +33,15 @@ const styles = StyleSheet.create({
         flex: 1, 
         justifyContent: "flex-end", 
         alignItems: 'center', 
-        backgroundColor: '#000', 
+        backgroundColor: colors.white, 
     }, 
     buttonsContainer: {
         padding: 20,
         width: '100%', 
     },
     logo: {
-       width: 150,
-       height: 150, 
+       width: 130,
+       height: 130, 
        
     },
     logoContainer: {
@@ -50,10 +50,10 @@ const styles = StyleSheet.create({
        alignItems: 'center', 
     },
     tagline: {
-    fontSize: 20, 
-    fontWeight: "600",
+    fontSize: 26, 
+    fontWeight: "500",
     paddingVertical: 0,
-    color: colors.third, 
+    color: colors.black, 
     
 
 
